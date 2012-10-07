@@ -32,7 +32,7 @@ module Oscflow::Client
       say  Oscflow::Client::Midi.list
     end
     
-    map %w(--input) => 'input'
+    map %w(--input --start) => 'start_session'
     desc "input", "listen midi input"
     def start_session
       #say 
