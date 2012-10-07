@@ -1,5 +1,6 @@
 require "thor"
 require "thor/group"
+require "oscflow-client/midi"
 module Oscflow::Client
   class CLI < Thor
     include Thor::Actions
@@ -28,7 +29,7 @@ module Oscflow::Client
     map %w(--l) => 'list'
     desc "list", "list midi devices"
     def list
-      say ::Oscflow::Client::Midi.list
+      say  Oscflow::Client::Midi.list
     end
     
     
