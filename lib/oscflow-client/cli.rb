@@ -40,8 +40,9 @@ module Oscflow::Client
       device = ask("which device you want to use?")
       host = "localhost" #defaults to oscflow!
       port = 8080
-      session_msg = ask("which channel do you want to send messages?")
+      chan = ask("which channel do you want to send messages?")
       midiin = Oscflow::Client::Midi.new
+      midiin.osc_client(host, port, chan)
       midiin.listen(device.to_i)
     end
     
