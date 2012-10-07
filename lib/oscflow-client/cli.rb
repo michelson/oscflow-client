@@ -1,5 +1,5 @@
+require "thor"
 require "thor/group"
-#require "coolstrap"
 module Oscflow::Client
   class CLI < Thor
     include Thor::Actions
