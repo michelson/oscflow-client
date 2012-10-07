@@ -20,7 +20,7 @@ module Oscflow::Client
     }
     
     map %w(--version -v) => 'info'
-    desc "info", "information about Coolstrap::Generator."
+    desc "info", "information about Oscflow::Client."
     def info
       say "Version #{::Oscflow::Client::VERSION}"
     end
