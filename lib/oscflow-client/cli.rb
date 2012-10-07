@@ -34,10 +34,13 @@ module Oscflow::Client
     
     map %w(--input) => 'input'
     desc "input", "listen midi input"
-    def input
+    def start_session
       #say 
       Oscflow::Client::Midi.list
       device = ask("which device you want to use?")
+      host = "localhost" #defaults to oscflow!
+      port = 8080
+      session_msg = ask("which channel do you want to send messages?")
       midiin = Oscflow::Client::Midi.new
       midiin.listen(device.to_i)
     end
