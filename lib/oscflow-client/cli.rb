@@ -32,6 +32,16 @@ module Oscflow::Client
       say  Oscflow::Client::Midi.list
     end
     
+    map %w(--input) => 'input'
+    desc "input", "listen midi input"
+    def input
+      #say 
+      Oscflow::Client::Midi.list
+      device = ask("which device you want to use?")
+      midiin = Oscflow::Client::Midi.new
+      midiin.listen(device.to_i)
+    end
+    
     
   end
 end

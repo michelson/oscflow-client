@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency(%q<erubis>,              ["~> 2.7.0"])
   gem.add_runtime_dependency(%q<thor>,                ["~> 0.15.4"])
   gem.add_runtime_dependency(%q<unimidi>)
+  gem.add_development_dependency(%q<osc-ruby>)
   gem.add_development_dependency(%q<bundler>,         ["~> 1.1"])
   gem.add_development_dependency(%q<rspec>,           ["~> 2.6.0"])
   
