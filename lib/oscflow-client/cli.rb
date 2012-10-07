@@ -24,5 +24,13 @@ module Oscflow::Client
     def info
       say "Version #{::Oscflow::Client::VERSION}"
     end
+    
+    map %w(--l) => 'list'
+    desc "list", "list midi devices"
+    def list
+      say ::Oscflow::Client::Midi.list
+    end
+    
+    
   end
 end
