@@ -1,5 +1,5 @@
 require 'unimidi'
-
+require "oscflow-client/osc_send"
 module Oscflow
   module Client
     
@@ -12,7 +12,8 @@ module Oscflow
       
       def osc_client(host, port, chan)
         @chan = chan
-        @osc_client = Oscflow::Client::OscSend.connect(host, port)
+        @osc_client = Oscflow::Client::OscSend.new
+        @osc_client.connect(host, port)
       end
       
       def listen(device_index)

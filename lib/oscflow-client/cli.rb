@@ -32,6 +32,24 @@ module Oscflow::Client
       say  Oscflow::Client::Midi.list
     end
     
+    map %w(--stop) => 'stop'
+    desc "stop", "stop osc recording"
+    def stop
+      host = "localhost" #defaults to oscflow!
+      port = 8080
+      chan = ask("which channel do you want to send messages?")
+      say  Oscflow::Client::OscSend.new.stop(host, port, chan)
+    end
+    
+    map %w(--red) => 'rec'
+    desc "rec", "record a osc session"
+    def rec
+      host = "localhost" #defaults to oscflow!
+      port = 8080
+      chan = ask("which channel do you want to send messages?")
+      say  Oscflow::Client::OscSend.new.rec(host, port, chan)
+    end
+    
     map %w(--input --start) => 'start_session'
     desc "input", "listen midi input"
     def start_session
