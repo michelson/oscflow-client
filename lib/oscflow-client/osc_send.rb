@@ -9,8 +9,10 @@ module Oscflow
       end
       
       def send_data(channel, *args)
-        #puts "send message #{args}"
-        @client.send( OSC::Message.new( "/chan/#{channel}" , args.to_s ))
+        puts "send message #{args[0].size} #{args.size}"
+        args[0].each do |arg|
+          @client.send( OSC::Message.new( "/chan/#{channel}" , arg.to_s ))
+        end
       end
       
       def rec(channel)
