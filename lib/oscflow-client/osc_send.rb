@@ -9,7 +9,7 @@ module Oscflow
       end
       
       def send_data(channel, *args)
-        puts "send message #{args}"
+        #puts "send message #{args}"
         @client.send( OSC::Message.new( "/chan/#{channel}" , args.to_s ))
       end
       
