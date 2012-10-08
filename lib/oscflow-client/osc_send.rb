@@ -16,12 +16,12 @@ module Oscflow
       end
       
       def rec(channel)
-        #connect(host, port)
+        connect("localhost", 8080) unless @client
         @client.send( OSC::Message.new( "/chan/#{channel}" , "rec" ))
       end
       
       def stop(channel)
-        #connect(host,port)
+        connect("localhost", 8080) unless @client
         @client.send( OSC::Message.new( "/chan/#{channel}" , "stop" ))
       end
     end
