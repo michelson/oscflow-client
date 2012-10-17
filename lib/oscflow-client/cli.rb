@@ -49,8 +49,8 @@ module Oscflow::Client
     end
     
     map %w(--input --start) => 'start_session'
-    desc "input", "listen midi input"
-    def start_session
+    desc "start", "listen midi input"
+    def start
       #say 
       Oscflow::Client::Midi.list
       device = ask("which device you want to use?")
