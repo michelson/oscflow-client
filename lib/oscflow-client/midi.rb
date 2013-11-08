@@ -6,7 +6,7 @@ module Oscflow
     class Midi 
       
       def self.list
-        UniMIDI::Device.all.each_with_index.map{|o, index| puts "#{index} #{o.name}"}
+        UniMIDI::Device.all_by_type[:input].each_with_index.map{|o, index| puts "#{index} #{o.name}"}
           #collect{|o| puts "#{o.id} #{o.name}"}
       end
       
